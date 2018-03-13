@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="keywords" content="水果网购,水果配送,生鲜电商,生鲜食品,蔬菜配送,水果礼品卡,天天果园">
+    <meta name="description" content="天天果园官方网站是专业的进口生鲜水果食品网络购物平台，提供水果网购，水果配送，生鲜食品和蔬菜配送服务，精选全球高端生鲜水果送货上门，天天果园是您首选的生鲜电商。">
+    <title>天天果园-水果网购|生鲜食品|蔬菜配送首选品牌，只为一份极致</title>
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_564845_tw10tgj40ahbbj4i.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <script src="angular.js"></script>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular-route.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img,span{
+            vertical-align: top;
+        }
+        img{
+            width: 100%;
+            border: 0;
+            display: block;
+        }
+        html,body{
+            height: 100%;
+        }
+        html{
+            font-size: 100px;
+        }
+        body{
+            font-size: 0.14rem;
+            font-weight: 300;
+            background-color: #f5f5f5;
+        }
+        .box{
+            display: flex;
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+        }
+        section{
+            flex: 1;
+            overflow-y: auto;
+        }
+        /*上下结构完成*/
+        /*头部开始*/
+        header{
+            line-height: 0.36rem;
+        }
+        .head{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+        }
+        .head-left{
+            width: 70%;
+            margin-left: 0.16rem;
+            padding-right: 0.16rem;
+            height: 0.35rem;
+            display: flex;
+            color: #65a032;
+            align-items: center;
+        }
+        .head-left img{
+            margin-right: 0.05rem;
+            width: 0.51rem;
+            height: 0.14rem;
+        }
+        .head-left i{
+            font-size: 0.14rem;
+        }
+        #search{
+            text-align: right;
+            font-size: .19rem;
+            padding-right: .16rem;
+            color: #3a3a3a;
+        }
+        .head-menu{
+            display: flex;
+            text-align: center;
+            border-top:1px solid #f5f5f5 ;
+            box-shadow: 0 0.03rem 0.03rem 0 rgba(0,0,0,.2);
+        }
+        .head-menu div{
+            width: 90px;
+        }
+        .head-menu div a{
+            color: inherit;
+            text-decoration: none;
+        }
+        .head-menu div span{
+            position: relative;
+          /*  padding: 0 0.05rem;*/
+        }
+        .active{
+            color: #65a032;
+           /* border-bottom: 0.03rem solid #65a032;*/
+        }
+        /*文字下面添加的底边框*/
+        .active:after{
+            content: "";
+            position: absolute;
+            width: 112%;
+            left: -6%;
+            bottom: -0.1rem;
+            -webkit-border-radius: 0.06rem 0.06rem 0 0;
+            -moz-border-radius: 0.06rem 0.06rem 0 0;
+            border-radius: 0.06rem 0.06rem 0 0;
+            height: 0.02rem;
+            background-color: #65a032;
+            transition-duration: 5s;
+        }
+        /*开始底部*/
+        footer{
+            width: 100%;
+            display: flex;
+        }
+        footer a{
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            color: #898989;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .footer a i{
+            font-size: 0.24rem
+        }
+        footer a:first-child{
+            color: #65a032;
+        }
+        footer a span{
+            font-size: 0.1rem;
+        }
+        /*开始主要内容部分*/
+        .banner a{
+            display: block;
+            text-decoration: none;
+        }
+        .big2banner{
+            background-color: #fff;
+            padding: 0.1rem 0.075rem 0.2rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .big2banner a{
+            display: block;
+            flex: 1;
+            padding: 0 0.025rem;
+        }
+        .big2banner img{
+            width: 100%;
+        }
+        .item-1{
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+        .item-1 div{
+            width: 49.7%;
+        }
+        .right{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .right a{
+            display: block;
+            height: 49.0%;
+        }
+        .item-2{
+            background-color: #fff;
+            margin-top: 10px;
+            padding: 0 0.075rem;
+            display: flex;
+        }
+        .item-2 a{
+            display: block;
+            padding: 10px 0.025rem 0;
+            flex: 1;
+        }
+        .item-3{
+            margin-top: 0;
+            padding-bottom: 0.2rem;
+        }
+        .item-4{
+            margin-top: 10px;
+            
+        }
+        .item-6{
+            width: 100%;
+            overflow: hidden;
+        }
+        .item-6 ul{
+            display: flex;
+            list-style-type: none;
+        }
+        .item-6 ul li a{
+            padding: 10px 8px 15px;
+            width: 96px;
+            display: block;
+            text-decoration: none;
+        }
+        .img-box{
+            position: relative;
+        }
+        .img-box span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #65A032;
+            border:1px solid #65A032;
+            border-radius: 0.02rem;
+            font-size: 0.08rem;
+            width: 0.1rem;
+            font-weight: 400;
+            padding: 0.02rem 0.01rem;
+            line-height: 1;
+        }
+        .img-box+p{
+            font-size: 0.12rem;
+            color: #3a3a3a;
+            text-align: center;
+            margin-top: 0.13rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .price{
+            position: relative;
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 0.12rem;
+            color: #ff8000;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 0.2rem;
+        }
+        .price i{
+            display: block;
+            width: 0.17rem;
+            height: 0.17rem;
+            border-radius: 50%;
+            border: 1px solid #bfbfbf;
+            font-size: 0.16rem;
+            position: absolute;
+            right: 0;
+            top: 0.02rem;
+            background-color: white;
+            line-height: 0.17rem;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body >
+<div class="box" ng-app="myApp">
+    <header >
+        <div class="head">
+            <div class="head-left">
+                <img src="imgs/jsd.png" alt="">
+                <div>陆家嘴</div>
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </div>
+            <i class="fa fa-search" aria-hidden="true" id="search"></i>
+        </div>
+        <div class="head-menu" ng-init="act=1">
+            <div><a href="#/"><span ng-class="{active:act==1}" ng-click="act=1">精选推荐</span></a></div>
+            <div><a href="#/freshFruit"><span ng-class="{active:act==2}" ng-click="act=2">时令鲜果</span></a></div>
+        </div>
+    </header>
+  <section>
+      <div ng-view></div>
+  </section>
+    <footer class="footer">
+        <a href="#/">
+            <i class="iconfont icon-home"></i>
+            <span>首页</span>
+        </a>
+        <a href="#/sorts">
+            <i class="iconfont icon-fenlei"></i>
+            <span>分类</span>
+        </a>
+        <a href="#shoppcart">
+            <i class="iconfont icon-gouwuche"></i>
+            <span>购物车</span>
+        </a>
+        <a href="#/mine">
+            <i class="iconfont icon-daohanglan-05" ></i>
+            <span>我的果园</span>
+        </a>
+    </footer>
+</div>
+</body>
+<script>
+    var app = angular.module("myApp",['ngRoute']);
+    app.config(['$routeProvider',function ($routeProvider) {
+        $routeProvider
+            .when('/',{templateUrl:'html/homepage.html'})
+            .when('/sorts',{templateUrl:'html/sorts.html'})
+            .when('/shoppcart',{templateUrl:'html/shoppingCart.html'})
+            .when('/mine',{templateUrl:'html/mine.html'})
+            .when('/freshFruit',{templateUrl:'html/freshFruit.html'})
+            .otherwise({redirectTo:'/'});
+    }]);
+</script>
+</html>
